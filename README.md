@@ -14,4 +14,4 @@ The terminal display accepts single character inputs to make menu selections.
  ```
 Functionality includes displaying current balance, adding to the balance, subtracting from the balance, and reviewing the last transaction.
 
-There is no exception handling or input verification.  Lowercase characters are accepted and read as uppercase characters in the switch.
+*There is no exception handling or input verification.  Lowercase characters are accepted and read as uppercase characters in the switch.*
