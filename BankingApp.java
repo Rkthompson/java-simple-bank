@@ -33,31 +33,31 @@ class BankAccount {
     } //end default BankAccount constructor
 
     //constructor
-    BankAccount(String custName, String custID){
+    BankAccount(String nCustomerName, String nCustomerID){
         setBalance(0);
         setPreviousTransaction(0);
-        setCustomerName(custName);
-        setCustomerID(custName);
+        setCustomerName(nCustomerName);
+        setCustomerID(nCustomerID);
 
     } //end BankAccount constructor
 
     //accessors - getters
-    void setBalance(int newBalance){
-        balance = newBalance;
+    void setBalance(int nBalance){
+        balance = nBalance;
 
     } //end setBalance
 
-    void setPreviousTransaction(int newPreviousTransaction){
-        previousTransaction = newPreviousTransaction;
+    void setPreviousTransaction(int nPreviousTransaction){
+        previousTransaction = nPreviousTransaction;
     } //end setPreviousTransaction
 
-    void setCustomerName(String newCustomerName){
-        customerName = newCustomerName;
+    void setCustomerName(String nCustomerName){
+        customerName = nCustomerName;
 
     } //end setCustomerName
 
-    void setCustomerID(String newCustomerID){
-        customerID = newCustomerID;
+    void setCustomerID(String nCustomerID){
+        customerID = nCustomerID;
 
     } //end setCustomerID
 
@@ -82,21 +82,21 @@ class BankAccount {
     }
 
     //other functions
-    void deposit(int amount){
-        if(amount != 0){
-            int nBalance = getBalance() + amount;
+    void deposit(int nAmount){
+        if(nAmount != 0){
+            int nBalance = getBalance() + nAmount;
             setBalance(nBalance);
-            setPreviousTransaction(amount);
+            setPreviousTransaction(nAmount);
             
         }
     
     } //end deposit
 
-    void withdraw(int amount){
-        if(amount !=0){
-            int nBalance = getBalance() - amount;
+    void withdraw(int nAmount){
+        if(nAmount !=0){
+            int nBalance = getBalance() - nAmount;
             setBalance(nBalance);
-            setPreviousTransaction(-amount);
+            setPreviousTransaction(-nAmount);
 
         }
 
@@ -123,8 +123,8 @@ class BankAccount {
         char optionSelect = '\0';  //var to hold the selection made
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome " + customerName);
-        System.out.println("Your ID is " + customerID);
+        System.out.println("Welcome " + getCustomerName());
+        System.out.println("Your ID is " + getCustomerID());
         System.out.println("\n");
 
         do{
@@ -139,7 +139,9 @@ class BankAccount {
 
                 case 'A':
                     System.out.println("--------------------------");
-                    System.out.println("Balance: " + balance);
+                    System.out.println("Name: " + getCustomerName());
+                    System.out.println("Id #: " + getCustomerID());
+                    System.out.println("Balance: " + getBalance());
                     System.out.println("--------------------------");
                     System.out.println("\n");
                     break;
@@ -164,7 +166,7 @@ class BankAccount {
 
                 case 'D':
                     System.out.println("--------------------------");
-                    System.out.print("Previous transaction: ");
+                    System.out.println("Previous transaction: ");
                     displayPreviousTransaction();
                     System.out.println("--------------------------");
                     System.out.println("\n");
@@ -185,7 +187,11 @@ class BankAccount {
 
         scanner.close(); //close the open scanner
 
-        System.out.println("Thank you for using our services");
+        System.out.println("Thank you " + getCustomerName() + " for using our services");
+        System.out.println("Final balance: " + getBalance());
+        System.out.println("--------------------------");
+        System.out.println("\n");
+
 
     } //end openMenu
 
