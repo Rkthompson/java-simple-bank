@@ -24,7 +24,7 @@ class BankAccount {
 
     //object constructors
     //default constructor
-    BankAccount(){
+    public BankAccount(){
         setBalance(0);
         setPreviousTransaction(0);
         setCustomerName("");
@@ -33,7 +33,7 @@ class BankAccount {
     } //end default BankAccount constructor
 
     //constructor
-    BankAccount(String nCustomerName, String nCustomerID){
+    public BankAccount(String nCustomerName, String nCustomerID){
         setBalance(0);
         setPreviousTransaction(0);
         setCustomerName(nCustomerName);
@@ -42,47 +42,47 @@ class BankAccount {
     } //end BankAccount constructor
 
     //accessors - getters
-    void setBalance(int nBalance){
+    public void setBalance(int nBalance){
         balance = nBalance;
 
     } //end setBalance
 
-    void setPreviousTransaction(int nPreviousTransaction){
+    public void setPreviousTransaction(int nPreviousTransaction){
         previousTransaction = nPreviousTransaction;
     } //end setPreviousTransaction
 
-    void setCustomerName(String nCustomerName){
+    public void setCustomerName(String nCustomerName){
         customerName = nCustomerName;
 
     } //end setCustomerName
 
-    void setCustomerID(String nCustomerID){
+    public void setCustomerID(String nCustomerID){
         customerID = nCustomerID;
 
     } //end setCustomerID
 
     //mutators - setters
-    int getBalance(){
+    public int getBalance(){
         return balance;
 
     } //end getBalance
 
-    int getPreviousTransaction(){
+    public int getPreviousTransaction(){
         return previousTransaction;
     } //end getPreviousTransaction
 
-    String getCustomerName(){
+    public String getCustomerName(){
         return customerName;
 
     } //end getCustomerName
 
-    String getCustomerID(){
+    public String getCustomerID(){
         return customerID;
 
     }
 
     //other functions
-    void deposit(int nAmount){
+    public void deposit(int nAmount){
         if(nAmount != 0){
             int nBalance = getBalance() + nAmount;
             setBalance(nBalance);
@@ -92,7 +92,7 @@ class BankAccount {
     
     } //end deposit
 
-    void withdraw(int nAmount){
+    public void withdraw(int nAmount){
         if(nAmount !=0){
             int nBalance = getBalance() - nAmount;
             setBalance(nBalance);
@@ -102,7 +102,7 @@ class BankAccount {
 
     } //end withdraw
 
-    void displayPreviousTransaction(){
+    public void displayPreviousTransaction(){
         if(getPreviousTransaction() > 0){
             System.out.println("Depostied " + getPreviousTransaction());
 
@@ -118,7 +118,7 @@ class BankAccount {
 
     } //end getPreviousTransaction
 
-    void openMenu(){
+    public void openMenu(){
 
         char optionSelect = '\0';  //var to hold the selection made
         Scanner scanner = new Scanner(System.in);
@@ -195,7 +195,7 @@ class BankAccount {
 
     } //end openMenu
 
-    void displayMenuList(){
+    public void displayMenuList(){
         System.out.println("A. Check Balance");
         System.out.println("B. Deposit");
         System.out.println("C. Withdraw");
