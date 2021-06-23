@@ -50,6 +50,7 @@ class BankAccount {
      * @param nCustomerName Accepts a String of the customer name.
      * @param nCustomerID Accepts a String of the customer id.
      */
+
     public BankAccount(String nCustomerName, String nCustomerID){
         setBalance(0);
         setPreviousTransaction(0);
@@ -63,6 +64,7 @@ class BankAccount {
      * setBalance accepts an int value for the balance.
      * @param nBalance balance value.
      */
+
     public void setBalance(int nBalance){
         balance = nBalance;
 
@@ -77,6 +79,7 @@ class BankAccount {
      * example - John Q. Sample.
      * @param nCustomerName String containing the full name.
      */
+
     public void setCustomerName(String nCustomerName){
         customerName = nCustomerName;
 
@@ -86,6 +89,7 @@ class BankAccount {
      * setCustomerID accepts a String containing the customer ID as an Alpha - Numeric String.
      * @param nCustomerID String for the unique customer ID.
      */
+
     public void setCustomerID(String nCustomerID){
         customerID = nCustomerID;
 
@@ -97,6 +101,7 @@ class BankAccount {
      * getBalance returns the current balance as an int value.
      * @return The current balance.
      */
+
     public int getBalance(){
         return balance;
 
@@ -106,6 +111,7 @@ class BankAccount {
      * getPreviousTransaction returns an int of the last transaction.
      * @return The last transaction.
      */
+
     public int getPreviousTransaction(){
         return previousTransaction;
     } //end getPreviousTransaction
@@ -114,6 +120,7 @@ class BankAccount {
      * getCustomerName returns the customers full name as a String.
      * @return The customers full name.
      */
+
     public String getCustomerName(){
         return customerName;
 
@@ -123,6 +130,7 @@ class BankAccount {
      * getCustomerID returns the customer ID as an Alpha Numeric String.
      * @return The customer ID.
      */
+    
     public String getCustomerID(){
         return customerID;
 
