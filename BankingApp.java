@@ -82,6 +82,12 @@ class BankAccount {
     }
 
     //other functions
+
+    /**
+     * deposit accepts an int value to add to the balance total.
+     * @param nAmount int value representing amount deposited.
+     */
+
     public void deposit(int nAmount){
         if(nAmount != 0){
             int nBalance = getBalance() + nAmount;
@@ -91,6 +97,11 @@ class BankAccount {
         }
     
     } //end deposit
+
+    /**
+     * withdraw accepts an int value to subtract from the balance.
+     * @param nAmount int value representing the amount taken out of the balance.
+     */
 
     public void withdraw(int nAmount){
         if(nAmount !=0){
@@ -102,7 +113,7 @@ class BankAccount {
 
     } //end withdraw
 
-    public void displayPreviousTransaction(){
+    private void displayPreviousTransaction(){
         if(getPreviousTransaction() > 0){
             System.out.println("Depostied " + getPreviousTransaction());
 
@@ -118,6 +129,16 @@ class BankAccount {
 
     } //end getPreviousTransaction
 
+    /**
+     * openMenu starts a terminal session which displays customer name and id
+     * followed by a list of options:
+     * A. Check Balance
+     * B. Deposit
+     * C. Withdraw
+     * D. Previous transaction
+     * E. Exit
+     */
+    
     public void openMenu(){
 
         char optionSelect = '\0';  //var to hold the selection made
@@ -195,7 +216,7 @@ class BankAccount {
 
     } //end openMenu
 
-    public void displayMenuList(){
+    private void displayMenuList(){
         System.out.println("A. Check Balance");
         System.out.println("B. Deposit");
         System.out.println("C. Withdraw");
