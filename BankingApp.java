@@ -1,11 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * BankingApp.java is a demo of the local BankAccount class.
+ * 
+ */
+
 public class BankingApp {
 
     public static void main(String[] args){
 
         //declare objects
-        BankAccount bankAccountObj = new BankAccount("John Sample", "06202021");
+        BankAccount bankAccountObj = new BankAccount("John Q. Sample", "AB202021");
 
         //display the menu
         bankAccountObj.openMenu();
@@ -13,6 +18,12 @@ public class BankingApp {
     }  //end main
 
 } //end class BankingApp
+
+/**
+ * BankAccount is a simple bank account class that tracks balance additions and subtractions.
+ * <p>
+ * Interactions are handled by the terminal.
+ */
 
 class BankAccount {
 
@@ -33,6 +44,12 @@ class BankAccount {
     } //end default BankAccount constructor
 
     //constructor
+
+    /**
+     * The constructor BankAccount will instantiate an account object to track balance changes.
+     * @param nCustomerName Accepts a String of the customer name.
+     * @param nCustomerID Accepts a String of the customer id.
+     */
     public BankAccount(String nCustomerName, String nCustomerID){
         setBalance(0);
         setPreviousTransaction(0);
@@ -40,42 +57,72 @@ class BankAccount {
         setCustomerID(nCustomerID);
 
     } //end BankAccount constructor
-
-    //accessors - getters
+    
+    //mutators - setters
+    /**
+     * setBalance accepts an int value for the balance.
+     * @param nBalance balance value.
+     */
     public void setBalance(int nBalance){
         balance = nBalance;
 
     } //end setBalance
 
-    public void setPreviousTransaction(int nPreviousTransaction){
+    private void setPreviousTransaction(int nPreviousTransaction){
         previousTransaction = nPreviousTransaction;
     } //end setPreviousTransaction
 
+    /**
+     * setCustomerName accepts a String containing the customer's full name.
+     * example - John Q. Sample.
+     * @param nCustomerName String containing the full name.
+     */
     public void setCustomerName(String nCustomerName){
         customerName = nCustomerName;
 
     } //end setCustomerName
 
+    /**
+     * setCustomerID accepts a String containing the customer ID as an Alpha - Numeric String.
+     * @param nCustomerID String for the unique customer ID.
+     */
     public void setCustomerID(String nCustomerID){
         customerID = nCustomerID;
 
     } //end setCustomerID
+    
+    //accessors - getters
 
-    //mutators - setters
+    /**
+     * getBalance returns the current balance as an int value.
+     * @return The current balance.
+     */
     public int getBalance(){
         return balance;
 
     } //end getBalance
 
+    /**
+     * getPreviousTransaction returns an int of the last transaction.
+     * @return The last transaction.
+     */
     public int getPreviousTransaction(){
         return previousTransaction;
     } //end getPreviousTransaction
 
+    /**
+     * getCustomerName returns the customers full name as a String.
+     * @return The customers full name.
+     */
     public String getCustomerName(){
         return customerName;
 
     } //end getCustomerName
 
+    /**
+     * getCustomerID returns the customer ID as an Alpha Numeric String.
+     * @return The customer ID.
+     */
     public String getCustomerID(){
         return customerID;
 
@@ -130,13 +177,14 @@ class BankAccount {
     } //end getPreviousTransaction
 
     /**
-     * openMenu starts a terminal session which displays customer name and id
-     * followed by a list of options:
+     * openMenu starts a terminal session which displays customer name and id followed by a list of options:
      * A. Check Balance
      * B. Deposit
      * C. Withdraw
      * D. Previous transaction
      * E. Exit
+     * <p>
+     * All selections print output to the terminal.
      */
     
     public void openMenu(){
